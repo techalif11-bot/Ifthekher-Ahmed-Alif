@@ -1,0 +1,86 @@
+/* styles.css */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent: #ff0000;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-headline: 'Bebas Neue', sans-serif;
+}
+
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+h1 {
+    font-family: var(--font-headline);
+    font-size: 4rem;
+    color: var(--text-color);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .header { flex-direction: column; }
+}
+
+/* More styles for grids, forms, etc. */
